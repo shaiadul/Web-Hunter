@@ -24,13 +24,13 @@ const Navside = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-2 m-2 font-bold font-serif ">
-            <li className='hover:text-orange-500 hover:border-b-4 hover:border-orange-500'><a>Home</a></li>
-            <li className='hover:text-orange-500 hover:border-b-4 '><a>Service</a></li>
-            <li className='hover:text-orange-500 hover:border-b-4 '><a>Packages</a></li>
-            <li className='hover:text-orange-500 hover:border-b-4 '><a>Coverage</a></li>
-            <li className='hover:text-orange-500 hover:border-b-4 '><a>Pay Bill</a></li>
-            <li className='hover:text-orange-500 hover:border-b-4 '><a>Offer</a></li>
-            <li className='hover:text-orange-500 hover:border-b-4 '><a>Support</a></li>
+            <li className='hover:text-orange-500 '><a>Home</a></li>
+            <li className='hover:text-orange-500 '><a>Service</a></li>
+            <li className='hover:text-orange-500 '><a>Packages</a></li>
+            <li className='hover:text-orange-500 '><a>Coverage</a></li>
+            <li className='hover:text-orange-500 '><a>Pay Bill</a></li>
+            <li className='hover:text-orange-500 '><a>Offer</a></li>
+            <li className='hover:text-orange-500 '><a>Support</a></li>
           </ul>
         </div>
         <div className="navbar-end">
