@@ -1,10 +1,10 @@
-import logo from './Assets/logo.png';
 import './App.css';
+import Navside from './pages/Navbar/Navside';
 
 function App() {
   return (
-    <div className="App">
-     <h1 className='text-green-400'>Bismilla i will start</h1>
+    <div className="bg-white">
+     <Navside/>
     </div>
   );
 }
