@@ -19,7 +19,7 @@ const Navside = () => {
             <li><a>Support</a></li>
           </ul>
         </div>
-        {/* logo */}
+        {/* logo setting*/}
         <h2 className="pl-4 font-bold text-2xl text-center font-serif"><span className='text-orange-500'>W</span>eb<span className='text-orange-500'>||</span>Hunte<span className='text-orange-500'>r</span></h2>
       </div>
       <div className="navbar-center hidden lg:flex">
