@@ -1,43 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../../Assets/logo.png';
+import { GoThreeBars } from 'react-icons/go';
+import { MdDashboardCustomize, MdOutlineClose } from 'react-icons/md';
+import { NavLink } from 'react-router-dom';
 
 const Navside = () => {
+  const [toggle, setToggle] = useState(false);
+  // toggle function
+  const navBtnHndle = () => {
+    setToggle(!toggle)
+}
   return (
-    <div className="navbar bg-white shadow-xl text-center text-slate-900">
-      <div className="navbar-start">
-        <div className="dropdown">
-          <label tabIndex={0} className=" lg:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="purple" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-          </label>
-          <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-gray-200 rounded-box w-52 font-bold font-serif text-orange-500">
-            <li><a>Home</a></li>
-            <li><a>Service</a></li>
-            <li><a>Packages</a></li>
-            <li><a>Coverage</a></li>
-            <li><a>Pay Bill</a></li>
-            <li><a>Offer</a></li>
-            <li><a>Support</a></li>
-          </ul>
+    <div className='header-container fixed top-0 w-full '>
+            <nav
+                className='flex justify-center items-start  md:justify-between md:px-32 px-5 md:items-center'
+            >
+                {/* {
+                    // user &&
+                    <label for="dashboard-drower" tabindex="1" class="md:hidden absolute left-6  top-[22px]">
+                        <MdDashboardCustomize className='h-5 w-5'></MdDashboardCustomize>
+                    </label>
+                } */}
+                <img className='sm:w-52 w-48' src={logo} alt="" />
+                <span onChange={navBtnHndle} className='md:hidden absolute right-6  top-[22px]'>{toggle ? <MdOutlineClose></MdOutlineClose> : <GoThreeBars></GoThreeBars>}</span>
+                <ul onChange={navBtnHndle} className={`flex flex-col text-center md:justify-end z-10  md:flex-row md:top-0 left-0 w-full md:relative md:opacity-100  absolute  py-4 md:py-0 duration-500 ${toggle ? " opacity-100  top-14" : " top-[-250px] opacity-0"}`}>
+                    <NavLink className={({ isActive }) => (isActive ? 'activeLink' : 'navLink')} to={"/"}>Home</NavLink>
+                    
+                    <NavLink className={({ isActive }) => (isActive ? 'activeLink' : 'navLink')} to={"/myPortfolio"}>My Portfolio</NavLink>
+                    <NavLink className={({ isActive }) => (isActive ? 'activeLink' : 'navLink')} to={"/blogs"}>Blogs</NavLink>
+
+                   
+                        <button  className='uppercase my-0.5 md:my-0 text-left   mx-auto md:mx-0 md:pb-0.5' >LogOut</button>
+                        
+                        <NavLink className={({ isActive }) => (isActive ? 'activeLink' : 'navLink')} to={"/login"}>Login</NavLink>
+                    
+                </ul>
+            </nav>
         </div>
-        {/* logo setting*/}
-        <h2 className="pl-4 font-bold text-2xl text-center font-serif"><span className='text-orange-500'>W</span>eb<span className='text-orange-500'>||</span>Hunte<span className='text-orange-500'>r</span></h2>
-      </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal p-2 m-2 font-bold font-serif ">
-          <li className='hover:text-orange-500 '><a>Home</a></li>
-          <li className='hover:text-orange-500 '><a>Service</a></li>
-          <li className='hover:text-orange-500 '><a>Packages</a></li>
-          <li className='hover:text-orange-500 '><a>Coverage</a></li>
-          <li className='hover:text-orange-500 '><a>Pay Bill</a></li>
-          <li className='hover:text-orange-500 '><a>Offer</a></li>
-          <li className='hover:text-orange-500 '><a>Support</a></li>
-        </ul>
-      </div>
-      <div className="navbar-end">
-        <p className="btn btn-md border-none shadow-orange-300 bg-orange-500 font-serif font-bold text-lg text-black lowercase">Client Portel</p>
-        <p className="btn btn-md btn-outline border-none  shadow-orange-300 bg-orange-500 font-serif font-bold text-lg text-black lowercase">HOB</p>
-      </div>
-    </div>
   );
 };
 
