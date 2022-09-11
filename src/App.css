@@ -63,5 +63,7 @@
 
 
 .activeLink {
-  border-bottom: 2px solid #f15048;
+  border-bottom: 4px solid #f28122;
+  color: #f28122;
+  
 }
